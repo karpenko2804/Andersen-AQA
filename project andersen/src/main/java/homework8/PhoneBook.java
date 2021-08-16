@@ -30,23 +30,24 @@ class HM8 {
     }
 }
 class PhoneBook {
-    private Map<String, List<String>> directory_hm = new HashMap<>();
-    private List<String> phone_number_list;
+    private Map<String, List<String>> person = new HashMap<>();
+    private List<String> number;
 
     public void add(String surname, String phone_number) {
-        if (directory_hm.containsKey(surname)) {
-            phone_number_list = directory_hm.get(surname);
-            phone_number_list.add(phone_number);
-            directory_hm.put(surname, phone_number_list);
+        if (person.containsKey(surname)) {
+            number = person.get(surname);
+
+            number.add(phone_number);
+            person.put(surname, number);
         } else {
-            phone_number_list = new ArrayList<>();
-            phone_number_list.add(phone_number);
-            directory_hm.put(surname, phone_number_list);
+            number = new ArrayList<>();
+            number.add(phone_number);
+            person.put(surname, number);
         }
     }
 
     public List<String> get(String surname) {
-        return directory_hm.get(surname);
+        return person.get(surname);
     }
     }
 

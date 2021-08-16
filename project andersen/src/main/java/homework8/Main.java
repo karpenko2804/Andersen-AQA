@@ -17,7 +17,7 @@ public class Main {
         System.out.println(words.toString());
         System.out.println("Уникальные названия городов");
         System.out.println(unique.toString());
-        System.out.println("кол-во повторений слов в списке ");
+        System.out.println("кол-во повторений городов в списке ");
         for (String key : unique) {
             System.out.println(key + ": " + Collections.frequency(words, key));
         }
